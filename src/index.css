@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/lemon-milk');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Foulgraph Design System - Creative Studio */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --color-blanc: 0 0% 100%;
+    --color-noir: 220 15% 8%;
+    --color-gray-dark: 220 12% 15%;
+    --color-gray-medium: 215 10% 25%;
+    --color-gray-light: 210 8% 85%;
+    --color-gray-very-light: 210 5% 95%;
+    
+    /* Accent Colors for Typography */
+    --color-rose: 340 95% 55%;
+    --color-vert: 74 65% 55%;
+    --color-turquoise: 184 75% 50%;
+    
+    /* Neutral Palette */
+    --color-gray-50: 210 5% 98%;
+    --color-gray-100: 210 8% 95%;
+    --color-gray-200: 215 10% 90%;
+    --color-gray-300: 215 12% 83%;
+    --color-gray-400: 220 10% 65%;
+    --color-gray-500: 220 12% 45%;
+    --color-gray-600: 220 15% 32%;
+    --color-gray-700: 220 18% 25%;
+    --color-gray-800: 220 20% 15%;
+    --color-gray-900: 220 25% 8%;
+
+    /* Semantic Design Tokens */
+    --background: var(--color-blanc);
+    --foreground: var(--color-noir);
+    --card: var(--color-blanc);
+    --card-foreground: var(--color-noir);
+    --popover: var(--color-blanc);
+    --popover-foreground: var(--color-noir);
+    --primary: var(--color-noir);
+    --primary-foreground: var(--color-blanc);
+    --secondary: var(--color-gray-very-light);
+    --secondary-foreground: var(--color-noir);
+    --muted: var(--color-gray-50);
+    --muted-foreground: var(--color-gray-600);
+    --accent: var(--color-noir);
+    --accent-foreground: var(--color-blanc);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--color-blanc);
+    --border: var(--color-gray-200);
+    --input: var(--color-gray-100);
+    --ring: var(--color-noir);
+    --radius: 0.5rem;
+
+    /* Brand Accent Colors (for typography accents) */
+    --accent-rose: var(--color-rose);
+    --accent-vert: var(--color-vert);
+    --accent-turquoise: var(--color-turquoise);
+
+    /* Professional Shadows */
+    --shadow-subtle: 0 2px 8px 0 hsl(var(--color-noir) / 0.06);
+    --shadow-medium: 0 4px 16px 0 hsl(var(--color-noir) / 0.08);
+    --shadow-strong: 0 8px 32px 0 hsl(var(--color-noir) / 0.12);
+
+    /* Smooth Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-lato;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-lemon font-bold;
+  }
+  
+  .font-lemon {
+    font-family: 'Lemon/Milk', sans-serif;
+  }
+  
+  .font-lato {
+    font-family: 'Lato', sans-serif;
+  }
+}
+
+@layer components {
+  /* Creative Studio Typography System */
+  .hero-text {
+    @apply font-lemon text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[0.82] tracking-[-0.02em] text-foreground;
+  }
+
+  .section-title {
+    @apply font-lemon text-4xl md:text-5xl lg:text-6xl font-black text-foreground leading-[0.9] tracking-[-0.01em];
+  }
+
+  .subsection-title {
+    @apply font-lemon text-2xl md:text-3xl lg:text-4xl font-black text-foreground leading-tight tracking-[-0.01em];
+  }
+
+  .body-large {
+    @apply font-lato text-xl md:text-2xl text-muted-foreground leading-relaxed font-light;
+  }
+
+  .body-text {
+    @apply font-lato text-lg text-muted-foreground leading-relaxed font-light;
+  }
+
+  .eyebrow {
+    @apply font-lato text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground;
+  }
+
+  .display-large {
+    @apply font-lemon text-8xl md:text-9xl lg:text-[12rem] font-black leading-[0.8] tracking-[-0.03em];
+  }
+
+  /* Colored Letters for Titles */
+  .text-accent-rose {
+    color: hsl(var(--accent-rose));
+  }
+
+  .text-accent-vert {
+    color: hsl(var(--accent-vert));
+  }
+
+  .text-accent-turquoise {
+    color: hsl(var(--accent-turquoise));
+  }
+
+  /* Minimal Cards */
+  .card-minimal {
+    @apply bg-card border-0 transition-all duration-300;
+  }
+
+  .card-minimal:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-1px);
+  }
+
+  /* Black Section */
+  .section-black {
+    @apply bg-foreground text-background;
+  }
+
+  .section-black .text-foreground {
+    @apply text-background;
+  }
+
+  .section-black .text-muted-foreground {
+    @apply text-background/70;
+  }
+
+  /* Minimal Shadows */
+  .shadow-minimal { 
+    box-shadow: var(--shadow-minimal); 
+  }
+  
+  .shadow-card { 
+    box-shadow: var(--shadow-card); 
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth { 
+    transition: var(--transition-base); 
+  }
+
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in.delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-fade-in.delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animate-fade-in.delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Service Cards */
+  .service-card {
+    @apply cursor-pointer transition-all duration-300;
+  }
+
+  .service-card:hover .service-title {
+    @apply text-accent-rose;
+  }
+
+  .service-card:nth-child(2):hover .service-title {
+    @apply text-accent-vert;
+  }
+
+  .service-card:nth-child(3):hover .service-title {
+    @apply text-accent-turquoise;
+  }
+}
