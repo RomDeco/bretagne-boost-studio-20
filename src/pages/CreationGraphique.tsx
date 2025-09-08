@@ -150,9 +150,9 @@ const CreationGraphique = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((step, index) => <div key={index} className="text-center group bg-lime-500 rounded-none">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-hero flex items-center justify-center shadow-float group-hover:scale-110 transition-bounce">
-                  <span className="font-lemon font-bold text-2xl text-white">{step.step}</span>
+            {process.map((step, index) => <div key={index} className="text-center group rounded-none bg-zinc-100">
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-hero flex items-center justify-center shadow-float group-hover:scale-110 transition-bounce bg-zinc-900">
+                  <span className="font-lemon font-bold text-2xl text-lime-500">{step.step}</span>
                 </div>
                 <h3 className="font-lemon font-bold text-xl mb-3 text-foreground">{step.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{step.description}</p>
